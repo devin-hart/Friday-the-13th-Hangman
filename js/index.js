@@ -5,17 +5,25 @@ let words = [
   "vorhees",
   "pamela",
   "crystal",
-  "manhattan",
+  "lazarus",
   "machete",
-  "drowned"
+  "drowned",
+  "forestgreen",
+  "jarvis",
+  "decapitation",
+  "newblood"
 ];
 let hints = [
   "Jason's last name",
   "Jason's mother's name",
-  "Camp _______ Lake",
-  "Jason takes over this NYC borough",
+  "Camp _______ Lake 🔪",
+  "USS _______, name of the ship in Part VIII",
   "Jason's weapon of choice",
-  "How Jason died originally"
+  "How Jason originally died",
+  "Name of the town in Part VI 🔪",
+  "Reccuring character in the series Tommy ______",
+  "How Mrs. Vorhees meets her end 🔪",
+  "Title of Part VII 🔪"
 ];
 let x = Math.floor(Math.random() * words.length);
 let answer = words[x];
@@ -48,7 +56,7 @@ function guessLetter() {
       }
     }
 
-    if (answer != guess) {
+    if (answer !== guess) {
       triesCounter++;
       attempts.textContent = triesCounter;
       lastletter.textContent = guess;
@@ -64,7 +72,7 @@ function guessLetter() {
 
     }
 
-    if (triesCounter > 10) {
+    if (triesCounter > 9) {
       restartBtn.classList.remove('hidden');
       winlose.innerHTML = '<img src="images/hangman_lose.gif">';
       document.querySelector('#submitbtn').disabled = true;
