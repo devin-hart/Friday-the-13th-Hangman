@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Friday the 13th Hangman</title>
+  <!-- Stylesheets -->
+  <link href="https://fonts.googleapis.com/css?family=Merriweather+Sans" rel="stylesheet">
+  <link rel="stylesheet" href="css/index.css">
+</head>
+
+<body>
+
+
+
+  <div class="wrapper">
+    <div class="box1"><img src="images/hangman_header.png"></div>
+
+    <div class="btnbox"> <button id="reset" class="hidden">New Game?</button>
+    </div>
+
+    <div class="box2">
+
+      <div id="winlose"></div>
+    </div>
+
+<div class="hidedivs">
+    <div class="box3">
+
+      <div id="correct"></div>
+
+      <form class="inputbox">
+        <input type="text" name="guess" maxlength="1">
+        <input type="submit" id="submitbtn">
+      </form>
+
+
+    </div>
+
+    <div class="box4">
+      Hint: <span id="hintDiv"></span>
+    </div>
+
+    <div class="box5">
+      Last Letter Used:
+      <span id="lastletter"></span>
+    </div>
+
+    <div class="box6">
+      Attempts:
+      <span id="attempts"></span>
+
+
+
+    </div>
+</div>
+
+
+  </div>
+
+
+
+  <!-- JavaScripts -->
+  <script src="js/index.js"></script>
+</body>
+
+</html>

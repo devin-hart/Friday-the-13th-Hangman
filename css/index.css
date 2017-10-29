@@ -1,0 +1,97 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  /*background-color: rgba(0,0,0,0.1);*/
+}
+
+body, html {
+  height: 100vh;
+}
+
+
+.wrapper {
+  display: grid;
+  background-image: url("../images/hangman_bg.jpg");
+  height: 100%;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+  font-family: 'Merriweather Sans', sans-serif;
+  color: white;
+}
+
+/* image header */
+
+.box1 {
+  margin: 0 auto;
+}
+
+.btnbox {
+  margin: 0 auto;
+}
+
+/* win/lose */
+
+.box2 {
+  margin: 0 auto;
+}
+
+/* game area */
+
+.box3 {
+  margin: 0 auto;
+  letter-spacing: 10px;
+  text-align: center;
+  font-size: 50px;
+  text-shadow: 1px 1px 1px gray;
+}
+
+/* hint */
+
+.box4 {
+  margin: 0 auto;
+  font-size: 25px;
+  text-shadow: 1px 1px 1px gray;
+}
+
+/* last letter used */
+
+.box5 {
+  margin: 0 auto;
+  font-size: 20px;
+  text-shadow: 1px 1px 1px gray;
+}
+
+.box6 {
+  margin: 0 auto;
+  font-size: 20px;
+  text-shadow: 1px 1px 1px gray;
+}
+
+.hidden {
+  display: none;
+}
+
+input[type=text] {
+  background-color: black;
+  outline: none;
+  color: red;
+  font-size: 25px;
+  width: 25px;
+  border: 1px solid white;
+}
+
+.hidedivs {
+  margin: 0 auto;
+}
+
+#submitbtn {
+  background-color: red;
+  border: none;
+}
+
+#reset {
+  background-color: red;
+  border: none;
+}
