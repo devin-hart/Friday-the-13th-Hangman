@@ -21,6 +21,7 @@ let x = Math.floor(Math.random() * words.length);
 let answer = words[x];
 let hint = hints[x];
 let state = toUnderscores(answer);
+let triesCounter = 0;
 
 restartBtn.addEventListener("click", function() {
   window.location.reload(true);
@@ -36,7 +37,7 @@ function guessLetter() {
   form.addEventListener("submit", function(event) {
     event.preventDefault();
 
-    let triesCounter = 0;
+
     let guess = form.guess.value;
 
     for (let i = 0; i < state.length; i++) {
@@ -44,12 +45,16 @@ function guessLetter() {
       if (answer[i] === guess) {
         state[i] = answer[i];
         correct.textContent = state.join("");
-      } else {
-        triesCounter++;
-        attempts.textContent = triesCounter;
-        lastletter.textContent = guess;
       }
     }
+
+    if (answer != guess) {
+      triesCounter++;
+      attempts.textContent = triesCounter;
+      lastletter.textContent = guess;
+    }
+
+
 
     if (state.join("") === answer) {
       restartBtn.classList.remove('hidden');
@@ -59,10 +64,13 @@ function guessLetter() {
 
     }
 
-
-    if (state.join("") !== answer && triesCounter > 5) {
-      winlose.textContext = "You lose!";
+    if (triesCounter > 10) {
+      restartBtn.classList.remove('hidden');
+      winlose.innerHTML = '<img src="images/hangman_lose.gif">';
+      document.querySelector('#submitbtn').disabled = true;
+      hideDivs.classList.add('hidden');
     }
+
 
     form.guess.value = '';
   });
